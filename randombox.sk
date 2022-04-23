@@ -1,0 +1,16 @@
+command /랜덤상자받기:
+	trigger:
+		give 1 chest named "&f[ &e랜덤박스&f ]" with lore "설명" to player
+		message "[&e!&f] 랜덤박스 획득했어."
+		
+on place of chest:
+	if name of player's tool is "&f[ &e랜덤박스&f ]":
+		cancel event
+		remove 1 of player's tool from player's tool
+		set {랜덤뽑기} to random integer between 1 and 4
+		if {랜덤뽑기} is 1:
+			give 1 coal to player
+			message "[&e!&f] 석탄 1개 획득!"
+		if {랜덤뽑기} is 2:
+			give 1 iron to player
+			message "[&e!&f] 철 1개 획득!"

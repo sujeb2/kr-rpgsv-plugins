@@ -1,0 +1,5 @@
+command /메뉴:
+	trigger:
+		open chest with 3 rows named "&e빠른메뉴" to player
+		format slot 10 of player with compass named "&f스폰으로 가기" with lore "스폰으로 갈수 있습니다." and "길을 잃어버렸을때 아주 &e유용&5합니다!" to close then run [execute op command "/스폰"]
+		format slot 12 of player with diamond sword named "&f던전으로 가기" with lore "던전목록을 보여줍니다." and "&f[ &e던전목록&f ] : 해안, 해저, 바다, 마지막 세상, 초원" to close then run [execute op command "/던전"]

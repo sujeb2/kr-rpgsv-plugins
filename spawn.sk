@@ -1,0 +1,4 @@
+command /스폰:
+	trigger:
+		message "[&e!&f] &6스폰으로 이동중.."
+		[execute run op command "mv tp @s spawn"]

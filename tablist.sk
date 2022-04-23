@@ -1,0 +1,2 @@
+on join:
+	set tab header to "서버해더" and footer to "아랫부분" for player

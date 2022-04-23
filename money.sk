@@ -1,0 +1,17 @@
+on join:
+	if {money.%uuid of player%} is not set:
+		set {money.%uuid of player%} to 10000
+
+command /지갑:
+	trigger:
+		message "&6[&b 지갑 &6] &f%player%님의 지갑에 %{money.%uuid of player%}%원이 있습니다."
+
+command /용돈받기:
+	trigger:
+		add 1000 to {money.%uuid of player%}
+		message "&6[&b 일일용돈 &6] &f%player%님의 지갑에 1000원이 들어왔습니다."
+		
+command /용돈뺐기:
+	trigger:
+		subtract 1000 from {money.%uuid of player%}
+		message "[&e!&f] %player%님의 지갑에서 용돈 1000원이 차감됐어!"

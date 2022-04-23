@@ -1,0 +1,100 @@
+#show command list
+command /관리:
+	permission: skript.manage.help
+	trigger:
+		send ""
+		send "[ &a관리 도움말&f ]"
+		send ""
+		send "[ /공지 ]"
+		send "[ /지급 ]"
+		send "[ /채팅청소 ]"
+		send "[ /이동 ]"
+		send "[ /채팅 ]"
+		send "[ /블럭 ]"
+		send ""
+	
+command /공지 [<text>]:
+	permission: skript.manage.notice
+	trigger:
+		broadcast ""
+		broadcast "&f[ &a공지&f ] &l%arg 1%"
+		broadcast ""
+		
+command /지급:
+	permission: skript.manage.give
+	trigger:
+		give player's tool to all players
+		broadcast ""
+		broadcast "&f[ &aNotice&f ] 관리자 %player% 님이 %player's tool% 을 지급하였습니다."
+		broadcast ""
+
+command /채팅청소:
+	permission: skript.manage.clearchat
+	trigger:
+		loop 36 times:
+			broadcast ""
+		send "&f[ &b채팅청소&f ] 채팅청소가 완료되었습니다."
+	
+command /이동:
+	permission: skript.manage.stop
+	trigger:
+		if {관리.이동} is not set:
+			set {관리.이동} to true #{관리.이동} save true
+			broadcast ""
+			broadcast "&f[ &a이동제한&f ] 모든 플레이어의 이동이 제한됩니다."
+			broadcast ""
+		else:
+			delete {관리.이동}
+			broadcast ""
+			broadcast "&f[ &a이동제한 해제&f ] 모든 플레이어의 이동제한이 해제됩니다."
+			broadcast ""
+			
+on any movement: # if player moved
+	if {관리.이동} is true:
+		if player doesn't have the permission "skript.manage.stop": #if player dpesn't have "skript.manage.stop" permission passed
+			
+command /채팅:
+	permission: skript.manage.chatstop
+	trigger:
+		if {관리.채팅} is not set:
+			set {관리.채팅} to true
+			broadcast ""
+			broadcast "&f[ &aNotice&f ] 모든 플레이어의 채팅이 제한됩니다."
+			broadcast ""
+		else:
+			delete {관리.채팅}
+			broadcast ""
+			broadcast "&f[ &a채팅제한 해제&f ] 모든 플레이어의 채팅제한이 해제됩니다."
+			broadcast ""
+		
+on chat: # 플레이어가 채팅을 치면 아래 코드가 실행됩니다.
+	if {관리.채팅} is true:
+		if player doesn't have the permission "skript.manage.chatstop":
+			send "&f현재 채팅이 &c불가능&f한 상태입니다."
+			cancel event
+		
+command /블럭:
+	permission: skript.manage.blockstop
+	trigger:
+		if {관리.블럭} is not set:
+			set {관리.블럭} to true
+			broadcast ""
+			broadcast "&f[ &a블럭설치 제한&f ] 모든 플레이어의 블럭설치 및 파괴가 제한됩니다."
+			broadcast ""
+		else:
+			delete {관리.블럭}
+			broadcast ""
+			broadcast "&f[ &a블럭설치제한 해제&f ] 모든 플레이어의 블럭설치 및 파괴제한이 해제됩니다."
+			broadcast ""
+	
+on place: # 플레이어가 블럭을 설치하면 아래 코드가 실행됩니다.
+	if {관리.블럭} is true:
+		if player doesn't have the permission "skript.manage.blockstop":
+			send "&f현재 블럭설치가 &c불가능&f한 상태입니다."
+			cancel event # 이 이벤트의 발생을 취소시킵니다. 여기서는 블럭의 설치를 취소시킵니다.
+			
+on break: # 플레이어가 블럭을 파괴하면 아래 코드가 실행됩니다.
+	if {관리.블럭} is true:
+		if player doesn't have the permission "skript.manage.blockstop":
+			send "&f현재 블럭파괴가 &c불가능&f한 상태입니다."
+			cancel event # stop event

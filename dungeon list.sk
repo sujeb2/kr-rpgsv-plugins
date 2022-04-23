@@ -1,0 +1,5 @@
+command /던전:
+	trigger:
+		open chest with 3 rows named "&4던전 목록" to player
+		format slot 10 of player with sand named "&e해안" with lore "&e해안 &f던전입니다." and "&4무시무시한&f(?) 해안동물들이 살고있습니다." to close then run [execute op command "/해안"]
+		format slot 12 of player with lapis block named "&9바다" with lore "&9바다 &f던전입니다." and "&c외계생물&f들이 살고 있습니다...." to close then run [execute op command "/바다"]

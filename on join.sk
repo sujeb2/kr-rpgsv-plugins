@@ -1,0 +1,8 @@
+on first join:
+	set join message to "%player%님이 서버에 &6처음&f접속했습니다! 환영해주세요!"
+	
+on join:
+	set join message to "[&b 접속 &f] %player%님이 접속하셨습니다."
+	
+on quit:
+	set quit message to "[&c 퇴장 &f] %player%님이 퇴장하셨습니다."
