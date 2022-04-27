@@ -1,5 +1,5 @@
-# kr-rpgsv-plugins
-이 Repositiory는 (probalbly)모든 RPG서버에 need한 Plugin을 Equipped.
+# kr-rpgsv-skript-pack
+이 Repositiory는 (probalbly)모든 RPG서버에 need한 Skript 팩을 Equipped.
 
 # 명령어 모음집
 : /메뉴
