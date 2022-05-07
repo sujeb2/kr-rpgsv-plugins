@@ -1,0 +1,12 @@
+variables:
+	{fitem.%player%} = false
+
+command /기본템:
+	trigger:
+		if {fitem.%player%} is false:
+			give 1 iron pickaxe of unbreaking 1,efficiency 3 named "&4[&6기본템&4] &e기본 곡괭이" with lore "&e[&f 그저 그런 곡괭이 &e]" to player
+			give 1 iron sword of unbreaking 2, sharpness 2 named "&4[&6기본템&4] &e기본 칼" with lore "&e[&f 기본으로 주는 칼 &e]" to player
+			give 1 iron axe of unbreaking 4 named "&4[&6기본템&4] &e기본 도끼" with lore "&e[&f 나무 캘때 좋은 도끼 &e]" to player
+			set {fitem.%player%} to true
+		else:
+			message "&4[&6!&4]&e 기본템을 이미 받았습니다."
