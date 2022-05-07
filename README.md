@@ -59,9 +59,22 @@
 
 ![image](https://user-images.githubusercontent.com/89384053/164959328-3966836f-36f2-4f2b-be29-7127f5d9249a.png)
 (아직은 버그 있음)
+
 : /스폰
 
 ![image](https://user-images.githubusercontent.com/89384053/164959155-b1a000f9-90b5-44f7-93b2-d27d119ef0b9.png)
+
+: /기본템
+
+![image](https://user-images.githubusercontent.com/89384053/167239816-c532d71b-f1ac-4015-9254-e791841057b3.png) (곡괭이)
+
+![image](https://user-images.githubusercontent.com/89384053/167239824-d68d0c84-087d-4682-b490-e0368a193a32.png) (칼)
+
+![image](https://user-images.githubusercontent.com/89384053/167239831-7231b80c-204c-42b3-8c06-490c8e04c7c4.png) (도끼)
+
+[만약에 이미 받았을 경우]
+
+![image](https://user-images.githubusercontent.com/89384053/167239850-c7f764a3-de21-41c4-8da4-2b9d287dd5cc.png)
 
 
 # 필요한 플러그인들
