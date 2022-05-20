@@ -1,0 +1,16 @@
+# === Skript's variable storage ===
+# Please do not modify this file manually!
+#
+# version: 2.5
+
+fitem.<player>, boolean, 00
+fitem.damru_, boolean, 01
+money, long, 0000000000000FA0
+money.9af3afe2-c0de-40ff-8c69-d2e88d41f902, long, 0000000000003E80
+scboard.damru_, boolean, 01
+tnt.clear, boolean, 01
+관리.블럭, boolean, 01
+관리.이동, boolean, 01
+랜덤뽑기, long, 0000000000000002
+변수1, long, 0000000000000002
+
